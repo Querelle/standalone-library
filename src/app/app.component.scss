@@ -1,0 +1,15 @@
+@use "src/styles/typography";
+
+.app {
+  display: grid;
+  gap: typography.$spacing-s;
+  margin: typography.$spacing-s;
+}
+
+.temp-centered {
+  cursor: pointer;
+
+  & > * {
+    vertical-align: middle;
+  }
+}

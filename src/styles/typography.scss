@@ -1,0 +1,197 @@
+$display-bp: 576px;
+
+$f-family: 'Lexend', sans-serif;
+
+$font-size-1: 14px;
+$font-size-2: 16px;
+$font-size-3: 18px;
+$font-size-4: 20px;
+$font-size-5: 24px;
+$font-size-6: 28px;
+$font-size-7: 32px;
+$font-size-8: 40px;
+$font-size-9: 48px;
+$font-size-10: 56px;
+
+$font-weight-xlight: 100;
+$font-weight-light: 200;
+$font-weight-regular: 300;
+$font-weight-semibold: 400;
+$font-weight-bold: 600;
+$font-weight-xbold: 700;
+
+$line-height-xxs: 16px;
+$line-height-xs: 24px;
+$line-height-s: 28px;
+$line-height-m: 32px;
+$line-height-l: 40px;
+$line-height-xl: 48px;
+$line-height-xxl: 56px;
+
+$letter-spacing-tight: -2px;
+$letter-spacing-narrow: -1.3px;
+$letter-spacing-short: -1px;
+$letter-spacing-normal: 0px;
+$letter-spacing-large: 1px;
+
+$margin-top-s: 32px;
+$margin-bottom-s: 16;
+$margin-top-l: 32px;
+$margin-bottom-l: 16px;
+
+$spacing-xxs: 4px;
+$spacing-xs: 8px;
+$spacing-s: 16px;
+$spacing-m: 24px;
+$spacing-l: 32px;
+$spacing-xl: 40px;
+$spacing-xxl: 48px;
+
+$radius: 3px;
+
+@mixin dual-margin($display: 'small') {
+  @if($display == 'small') {
+    margin-top: $margin-top-s;
+    margin-bottom: $margin-bottom-s;
+  } @else {
+    margin-top: $margin-top-l;
+    margin-bottom: $margin-bottom-l;
+  }
+}
+
+@mixin single-margin($display: 'small') {
+  @if($display == 'small') {
+    margin-bottom: $margin-bottom-s;
+  } @else {
+    margin-bottom: $margin-bottom-l;
+  }
+}
+
+@mixin display-1($display: 'small') {
+  font-weight: $font-weight-bold;
+  letter-spacing: $letter-spacing-short;
+  @include dual-margin($display);
+
+  @if($display == 'small') {
+    font-size: $font-size-8;
+    line-height: $line-height-xl;
+  } @else {
+    font-size: $font-size-9;
+    line-height: $line-height-xxl;
+  }
+}
+
+@mixin display-2($display: 'small') {
+  font-weight: $font-weight-bold;
+  letter-spacing: $letter-spacing-normal;
+  @include dual-margin($display);
+
+  @if($display == 'small') {
+    font-size: $font-size-7;
+    line-height: $line-height-l;
+  } @else {
+    font-size: $font-size-8;
+    line-height: $line-height-xl;
+  }
+}
+
+@mixin display-3($display: 'small') {
+  font-weight: $font-weight-bold;
+  letter-spacing: $letter-spacing-normal;
+  @include dual-margin($display);
+
+  @if($display == 'small') {
+    font-size: $font-size-6;
+    line-height: $line-height-m;
+  } @else {
+    font-size: $font-size-7;
+    line-height: $line-height-l;
+  }
+}
+
+@mixin display-4($display: 'small') {
+  font-weight: $font-weight-semibold;
+  line-height: $line-height-m;
+  letter-spacing: $letter-spacing-normal;
+  @include dual-margin($display);
+
+  @if($display == 'small') {
+    font-size: $font-size-5;
+  } @else {
+    font-size: $font-size-6;
+  }
+}
+
+@mixin display-5($display: 'small') {
+  font-weight: $font-weight-semibold;
+  letter-spacing: $letter-spacing-normal;
+  @include dual-margin($display);
+
+  @if($display == 'small') {
+    font-size: $font-size-4;
+    line-height: $line-height-xs;
+  } @else {
+    font-size: $font-size-5;
+    line-height: $line-height-m;
+  }
+}
+
+@mixin display-6($display: 'small') {
+  font-weight: $font-weight-semibold;
+  letter-spacing: $letter-spacing-normal;
+  line-height: $line-height-xs;
+  @include dual-margin($display);
+
+  @if($display == 'small') {
+    font-size: $font-size-2;
+  } @else {
+    font-size: $font-size-3;
+  }
+}
+
+@mixin body-l($display: 'small') {
+  font-weight: $font-weight-regular;
+  letter-spacing: $letter-spacing-normal;
+  line-height: $line-height-m;
+  @include single-margin($display);
+
+  @if($display == 'small') {
+    font-size: $font-size-4;
+  } @else {
+    font-size: $font-size-5;
+  }
+}
+
+@mixin body-m($display: 'small') {
+  font-weight: $font-weight-regular;
+  letter-spacing: $letter-spacing-normal;
+  @include single-margin($display);
+
+  @if($display == 'small') {
+    font-size: $font-size-2;
+    line-height: $line-height-xs;
+  } @else {
+    font-size: $font-size-3;
+    line-height: $line-height-s;
+  }
+}
+
+@mixin body-s($display: 'small') {
+  @include single-margin($display);
+  font-weight: $font-weight-regular;
+  font-size: $font-size-1;
+  line-height: $line-height-xs;
+  letter-spacing: $letter-spacing-large;
+  margin-bottom: $font-size-1;
+}
+
+/* Normalizing */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+}

@@ -1,0 +1,69 @@
+@use "../../../styles/typography";
+
+.sta-menu {
+  background-color: #FFFFFF;
+  box-sizing: content-box;
+
+  & &__wrapper {
+    /* Overlay setup */
+    position: relative;
+    z-index: 2;
+    /* -- End overlay setup */
+
+    display: flex;
+    align-items: center;
+    background-color: #FFFFFF;
+    line-height: 1;
+  }
+
+  & &__burger {
+    font-size: typography.$font-size-8;
+    cursor: pointer;
+  }
+
+  & [list_horizontal] {
+    position: relative;
+    animation: listMenu 100ms;
+
+    & > * {
+      display: inline-block;
+      &:not(:last-child) {
+        margin-right: typography.$spacing-m;
+      }
+    }
+  }
+
+  & [list_floating] {
+    position: absolute;
+    top: -20px;
+
+    & > * {
+      display: block;
+      &:not(:last-child) {
+        margin-bottom: typography.$spacing-m;
+      }
+    }
+  }
+}
+
+@keyframes listMenu {
+  0% {
+    left: -100%;
+  }
+  25% {
+    left: -75%;
+  }
+  50% {
+    left: -50%;
+  }
+  75% {
+    left: -25%;
+  }
+  100% {
+    left: 0;
+  }
+}
+
+/*
+* Inserire animazioni all'apertura del menu!
+*/

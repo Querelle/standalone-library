@@ -4,6 +4,23 @@
   "compilerOptions": {
     "baseUrl": "./",
     "outDir": "./dist/out-tsc",
+    "paths": {
+      "@app/*": [
+        "./src/app/*"
+      ],
+      "@environment/*": [
+        "./src/environments/*"
+      ],
+      "@assets/*": [
+        "./src/assets/*"
+      ],
+      "@images/*": [
+        "./src/assets/images/*"
+      ],
+      "@styles/*": [
+        "./src/styles/*"
+      ]
+    },
     "forceConsistentCasingInFileNames": true,
     "strict": true,
     "noImplicitOverride": true,

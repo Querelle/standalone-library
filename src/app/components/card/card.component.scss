@@ -1,0 +1,81 @@
+@use "../../../styles/typography";
+@use "../../../styles/effects";
+
+
+.card {
+  background-color: #FFFFFF;
+  border-radius: typography.$radius;
+  box-shadow: effects.$elevated;
+  padding: typography.$spacing-s;
+
+  & &-header {
+    display: grid;
+    column-gap: typography.$spacing-l;
+    grid-template-columns: [start] 1fr [divider] 100px;
+    grid-template-areas:
+              'text image'
+              'divider divider';
+
+    &.left {
+      grid-template-columns: [start] 100px [divider] 1fr;
+      grid-template-areas:
+              'image text'
+              'divider divider';
+    }
+
+    &__text{
+      grid-area: text;
+
+      &:empty {
+        display: none;
+      }
+    }
+
+    &__image {
+      grid-area: image;
+      width: 100px;
+      height: 100px;
+      margin: auto;
+
+      &:empty {
+        display: none;
+      }
+    }
+
+    &__divider {
+      grid-area: divider;
+      border: none;
+      border-top: 0.1px solid #efefef;
+      width: 100%;
+    }
+
+    &__title.title {
+      @include typography.display-5('normal');
+    }
+
+    &__subtitle.subtitle {
+      @include typography.body-m('normal');
+    }
+
+    &__avatar {
+      width: 100%;
+      height: 100%;
+
+      img {
+        border-radius: 100%;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+  }
+}
+
+
+@media (max-width: typography.$display-bp){
+  .card {
+    > & &__header {
+      @include typography.body-m('small');
+    }
+  }
+}

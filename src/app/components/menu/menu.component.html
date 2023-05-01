@@ -1,0 +1,22 @@
+<div class="sta-menu">
+    <div class="sta-menu__wrapper">
+        <!--burger menu-->
+        <ng-container *ngIf="!fixed">
+            <div class="sta-menu__button" (click)="open()">
+                <span class="sta-menu__burger material-icons">{{opened ?  'close' : 'drag_handle'}}</span>
+            </div>
+        </ng-container>
+
+        <ng-container *ngIf="fixed || (!fixed && opened)">
+            <!--horizontal-->
+            <ng-content select="[list_horizontal]"></ng-content>
+
+            <!--floating-->
+            <ng-content select="[list_floating]"></ng-content>
+
+            <!--vertical-->
+            <ng-content #vertical></ng-content>
+        </ng-container>
+    </div>
+    <sta-overlay *ngIf="backdrop && opened" (clicked)="opened = false"></sta-overlay>
+</div>
