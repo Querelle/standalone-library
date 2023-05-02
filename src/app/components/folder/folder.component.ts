@@ -1,4 +1,4 @@
-import { Component } from "@angular/core";
+import { Component, ElementRef, OnInit, ViewChild, ViewEncapsulation } from "@angular/core";
 import { CardComponent } from "@app/components/card/card.component";
 import { FolderService } from "@app/components/folder/folder.service";
 
@@ -10,6 +10,8 @@ import { FolderService } from "@app/components/folder/folder.service";
         CardComponent
     ],
     styleUrls: ['folder.component.scss'],
-    providers: [FolderService]
+    providers: [FolderService],
+    encapsulation: ViewEncapsulation.None,
 })
-export class FolderComponent {}
+export class FolderComponent {
+}

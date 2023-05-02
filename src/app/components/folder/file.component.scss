@@ -1,0 +1,25 @@
+@use "src/styles/typography";
+
+.sta-file {
+
+  & &__tab {
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 200px;
+    padding: 0 5px;
+    border: 0.1px solid rgba(0, 0, 0, 0%);
+    border-top: 2px solid rgba(100, 21, 133, 100%);
+    border-radius: typography.$radius;
+    margin-bottom: 15px;
+
+    & [tab] {
+      overflow: hidden;
+    }
+
+    &_active {
+      border: 0.1px solid #efefef;
+      border-top: 2px solid rgba(199, 21, 133, 100%);
+    }
+  }
+}
